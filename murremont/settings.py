@@ -130,7 +130,7 @@ TOOLBAR_DEBUG = False
 
 if TOOLBAR_DEBUG:
     try:
-        from LabJournal import local_settings
+        from murremont import local_settings
 
         INSTALLED_APPS += local_settings.INSTALLED_APPS
         MIDDLEWARE = local_settings.MIDDLEWARE + MIDDLEWARE
