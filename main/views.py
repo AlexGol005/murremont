@@ -39,12 +39,12 @@ class OrderView(SuccessMessageMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(OrderView, self).get_context_data(**kwargs)
-        context['title'] = Repair.objects.get(pk=self.kwargs['pk'])
+        context['title'] = Repair.objects.get(pk=self.kwargs['pk']).name
         return context
 
     def form_valid(self, form):
         order = form.save(commit=False)
-        order.repair = Repair.objects.get(pk=self.kwargs['pk'])
+        order.repair = Repair.objects.get(pk=self.kwargs['pk']).name
         order.save()
         return super().form_valid(form)
 

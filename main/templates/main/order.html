@@ -8,7 +8,7 @@
 
 {% block content %}
     <div style="text-align: center;"><h4>Форма обратной связи</h4></div>
-    <div style="text-align: center;"><h6>к {{ title }}</h6></div>
+    <div style="text-align: center;"><h6>вид работ: {{ title }}</h6></div>
     <form method="post" class="form-register">
         {% csrf_token %}
         {{ form.as_p }}
