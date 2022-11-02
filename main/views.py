@@ -47,7 +47,7 @@ class OrderView(SuccessMessageMixin, CreateView):
         order = form.save(commit=False)
         order.repair = Repair.objects.get(pk=self.kwargs['pk']).name
         order.save()
-        return redirect('/sucsesss')
+        return redirect('/sucsess')
 
 class SucsessView(TemplateView):
     """ Представление, которое выводит подтверждение отправки заявки покупателю"""
