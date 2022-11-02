@@ -1,8 +1,6 @@
 from django import forms
-from django.db.models import  Q
 
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit, Row, Column
+
 from .models import *
 
 
@@ -40,15 +38,7 @@ class SearchForm(forms.Form):
     name = forms.CharField(label='Найти')
 
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Row(
-                Column('name', css_class='form-group col-md-10 mb-0'),
-                Submit('submit', 'Найти', css_class='btn  btn-info col-md-2 mb-3 mt-4 ml-4'),
-                css_class='form-row'
-            ))
+
 
 
 
