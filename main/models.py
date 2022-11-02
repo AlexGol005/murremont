@@ -47,12 +47,12 @@ class Order(models.Model):
     person = models.CharField('имя', max_length=100)
     adress = models.CharField('адрес', max_length=1000, blank=True, null=True)
     repair = models.CharField('работы по прайсу', max_length=1000, blank=True, null=True)
-    comment = models.CharField('комментарий', max_length=1000, blank=True, null=True)
+    comment = models.TextField('комментарий', max_length=1000, blank=True, null=True)
     telephone = models.CharField('телефон', max_length=12, blank=True, null=True)
     email = models.CharField('email', max_length=100, blank=True, null=True)
     status = models.CharField(max_length=300, choices=STATUS, default='Новый', null=True,
                               verbose_name='Статус')
-    commentmanager = models.CharField('комментарий менеджера', max_length=1000, blank=True, null=True)
+    commentmanager = models.TextField('комментарий менеджера', max_length=1000, blank=True, null=True)
 
 
     def __str__(self):
