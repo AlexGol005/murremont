@@ -48,7 +48,7 @@ footer {
 }
 
 .table-bordered td, .table-bordered th{
-    border-color: #4d74bd !important;
+    border-color: rgba(255, 165, 0, 0.56) !important;
     background-color: rgb(245, 245, 246) !important;
     text-align: center !important;
 }
@@ -111,4 +111,12 @@ th.ind {
 td.ind {
     max-width: 100px !important;
     word-wrap: break-word;
+}
+.clip {
+     text-align: center;
+    font-size: 8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1px rgb(252, 143, 10);
 }

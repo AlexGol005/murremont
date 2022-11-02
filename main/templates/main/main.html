@@ -1,0 +1,65 @@
+{% extends 'main/superbase.html' %}
+{% load static %}
+{% block title %}
+Мурино ремонт
+{% endblock %}
+
+
+{% block content %}
+
+{#    <h1> <font size="7" color="#ff8c00" face="Luminari">Мы работем с 7 до 23! Звоните: 89500484071</font></h1>#}
+
+<div class="clip">
+<h4> <font  color="white" face="Impact">Создаем уют у вас дома: в Мурино, Токсово и м.Гражданский пр.</font></h4>
+</div>
+    <br>
+<table class="table table-bordered">
+<td colspan="12"><h4> <font  color="#ff8c00" face="Impact">Мы работем с 7 до 23! &nbsp&nbsp   Звоните/пишите: 89500484071</font></h4>
+<font  color="#ff8c00" face="Georgia, serif">
+<br>- Срочный выезд мастера в течение от часа без выходных <br><br>
+- Сообщаем стоимость строго перед началом работ <br><br>
+- Оценка стоимости бесплатно - это значит, что если стоимость вас не устроила, то вы отказываетесь от работ и ничего не платите <br><br>
+- Работа любой сложности от "вбить гвоздь" до "полный ремонт квартиры" <br><br>
+</font>
+</td>
+</table>
+</div>
+<br>
+<div class="clip">
+<h4> <font  color="white" face="Impact">Оплата по тайм-системе</font></h4>
+</div>
+
+<table class="table table-bordered">
+<td colspan="12">
+<font  color="#ff8c00" face="Georgia, serif">
+<br>- До 1 часа - 1000 рублей <br>
+- Каждый следующий час - 600 рублей <br>
+- Стоп-чек - 5000 рублей в день <br>
+- 1 день - это 8 часов <br>
+</font>
+</td>
+</table>
+<br>
+    <div class="clip">
+<h4> <font  color="white" face="Impact">Средняя стоимость типовых работ</font></h4>
+</div>
+<table class="table table-bordered">
+<tr>
+
+    <td><font  color="#ff8c00" face="Impact">Вид </font></td>
+    <td><font  color="#ff8c00" face="Impact">Название</font></td>
+    <td><font  color="#ff8c00" face="Impact">Цена, <br>рублей</font></td>
+    <td><font  color="#ff8c00" face="Impact">Сроки, <br> часов</font></td>
+</tr>
+{% for obj in objects %}
+<tr>
+    <td>{{ obj.type }}</td>
+    <td> {{ obj.name }}</td>
+    <td> {{ obj.price }}</td>
+    <td>{{ obj.term }} </td>
+</tr>
+{% endfor %}
+
+
+</table>
+{% endblock %}

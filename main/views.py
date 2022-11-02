@@ -3,7 +3,6 @@ from django.views.generic import TemplateView
 
 
 class MainView(TemplateView):
-    template_name = 'main/superbase.html'
+    template_name = 'main/main.html'
 
-class TestView(TemplateView):
-    template_name = 'main/test.html'
+
