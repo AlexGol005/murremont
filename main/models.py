@@ -18,7 +18,7 @@ class Repair(models.Model):
     type = models.ForeignKey(Type, verbose_name='тип', on_delete=models.SET_NULL, null=True)
     name = models.CharField('Название', max_length=100, unique=True)
     term = models.DecimalField('Срок, часов', max_digits=2, decimal_places=0, default='1', blank=True)
-    price = models.DecimalField('Стоимость', max_digits=9, decimal_places=2, blank=True)
+    price = models.DecimalField('Стоимость', max_digits=9, decimal_places=2, blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.term <= Decimal(7):
