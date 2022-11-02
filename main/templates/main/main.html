@@ -63,7 +63,7 @@
 
     <td> {{ obj.name }}</td>
     <td> {{ obj.price }}</td>
-    <td><a href="{% url 'order' %}"  class="btn btn-outline-warning mt-3">заказать</a></td>
+    <td><a href="{% url 'order' obj.pk %}"  class="btn btn-outline-warning mt-3">заказать</a></td>
 
 </tr>
 {% endfor %}
