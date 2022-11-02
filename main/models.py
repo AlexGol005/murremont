@@ -27,12 +27,14 @@ class Repair(models.Model):
     price = models.DecimalField('Стоимость', max_digits=9, decimal_places=2, blank=True, null=True)
 
     def save(self, *args, **kwargs):
-        if self.term <= Decimal(7):
-            self.price = (self.term - Decimal(1)) * Decimal(600) + Decimal(1000)
+        if self.term <= Decimal(3):
+            self.price = self.term * Decimal(1500)
+        if Decimal(8) > self.term > Decimal(3):
+            self.price = (self.term - Decimal(3)) * Decimal(800) + Decimal(4500)
         if self.term == Decimal(8):
-            self.price = Decimal(5000)
+            self.price = Decimal(8100)
         if self.term > Decimal(8):
-            self.price = (self.term / Decimal(8)) * 5000
+            self.price = (self.term / Decimal(8)) * 8100
         super(Repair, self).save(*args, **kwargs)
 
 
