@@ -35,8 +35,8 @@ class OrderForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     "форма для поиска по списку работ"
-    name = forms.CharField(label='Найти', widget=forms.TextInput(attrs={'class': 'form-control',
-                                                              'placeholder': 'адрес'}
+    sword = forms.CharField(label='', widget=forms.TextInput(attrs={'class': 'form-control',
+                                                              'placeholder': 'введите слово для поиска'}
                                                        ))
 
 

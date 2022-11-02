@@ -16,6 +16,19 @@ class MainView(ListView):
         context['form'] = SearchForm
         return context
 
+class SearchResultView(TemplateView):
+    """ Представление, которое выводит результаты поиска на главной странице"""
+    template_name = 'main/listmain.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(SearchResultView, self).get_context_data(**kwargs)
+        sword = self.request.GET['sword']
+        objects = Repair.objects.filter(name__icontains=sword)
+        context['form'] = SearchForm
+        context['objects'] = objects
+        return context
+
+
 
 class OrderView(TemplateView):
     """выводит страницу заказа"""
