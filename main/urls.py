@@ -7,5 +7,5 @@ urlpatterns = [
     path('order/<int:pk>', views.OrderView.as_view(), name='order'),
     path('result/', views.SearchResultView.as_view(), name='serres'),
     path('result/', views.SearchResultView.as_view(), name='serres'),
-    path('sucsess/', views.SearchResultView.as_view(), name='sucsess'),
+    path('sucsess/', views.SucsessView.as_view(), name='sucsess'),
       ]
