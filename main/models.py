@@ -36,3 +36,18 @@ class Repair(models.Model):
     class Meta:
         verbose_name = 'Прайс работ'
         verbose_name_plural = 'Прайс работ'
+
+class Order(models.Model):
+    person = models.CharField('имя', max_length=100)
+    adress = models.CharField('адрес', max_length=1000, blank=True, null=True)
+    repair = models.CharField('работы по прайсу', max_length=1000, blank=True, null=True)
+    comment = models.CharField('комментарий', max_length=1000, blank=True, null=True)
+    telephone = models.CharField('телефон', max_length=12, blank=True, null=True)
+
+
+    def __str__(self):
+        return f'{self.person} ,  {self.telephone}, {self.repair}, {self.adress}'
+
+    class Meta:
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
