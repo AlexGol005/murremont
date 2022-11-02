@@ -23,19 +23,19 @@ class Type(models.Model):
 class Repair(models.Model):
     type = models.ForeignKey(Type, verbose_name='тип', on_delete=models.SET_NULL, null=True)
     name = models.CharField('Название', max_length=100, unique=True)
-    term = models.DecimalField('Срок, часов', max_digits=2, decimal_places=0, default='1', blank=True)
+    term = models.DecimalField('Срок, часов', max_digits=2, decimal_places=0, default='', blank=True, null=True)
     price = models.DecimalField('Стоимость', max_digits=9, decimal_places=2, blank=True, null=True)
 
-    def save(self, *args, **kwargs):
-        if self.term <= Decimal(3):
-            self.price = self.term * Decimal(1500)
-        if Decimal(8) > self.term > Decimal(3):
-            self.price = (self.term - Decimal(3)) * Decimal(800) + Decimal(4500)
-        if self.term == Decimal(8):
-            self.price = Decimal(8100)
-        if self.term > Decimal(8):
-            self.price = (self.term / Decimal(8)) * 8100
-        super(Repair, self).save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if self.term <= Decimal(3):
+    #         self.price = self.term * Decimal(1500)
+    #     if Decimal(8) > self.term > Decimal(3):
+    #         self.price = (self.term - Decimal(3)) * Decimal(800) + Decimal(4500)
+    #     if self.term == Decimal(8):
+    #         self.price = Decimal(8100)
+    #     if self.term > Decimal(8):
+    #         self.price = (self.term / Decimal(8)) * 8100
+    #     super(Repair, self).save(*args, **kwargs)
 
 
     def __str__(self):
