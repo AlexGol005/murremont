@@ -46,17 +46,18 @@
 <table class="table table-bordered">
 <tr>
 
-    <td><font  color="#ff8c00" face="Impact">Вид </font></td>
     <td><font  color="#ff8c00" face="Impact">Название</font></td>
     <td><font  color="#ff8c00" face="Impact">Цена, <br>рублей</font></td>
-    <td><font  color="#ff8c00" face="Impact">Сроки, <br> часов</font></td>
+    <td><font  color="#ff8c00" face="Impact">Заказать</font></td>
+
 </tr>
 {% for obj in objects %}
 <tr>
-    <td>{{ obj.type }}</td>
+
     <td> {{ obj.name }}</td>
     <td> {{ obj.price }}</td>
-    <td>{{ obj.term }} </td>
+    <td><a href="{% url 'order'  %}"  class="btn btn-outline-warning mt-3">заказать</a></td>
+
 </tr>
 {% endfor %}
 
