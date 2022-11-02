@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
 
-from main.forms import SearchForm
+from main.forms import SearchForm, OrderForm
 from main.models import Repair
 
 
@@ -17,11 +16,12 @@ class MainView(ListView):
         context['form'] = SearchForm
         return context
 
+
 class OrderView(TemplateView):
     """выводит страницу заказа"""
     template_name = 'main/order.html'
 
-
-
-
-
+    def get_context_data(self, **kwargs):
+        context = super(OrderView, self).get_context_data(**kwargs)
+        context['form'] = OrderForm
+        return context
