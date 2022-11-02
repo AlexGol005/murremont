@@ -43,11 +43,13 @@
     <div class="clip">
 <h4> <font  color="white" face="Impact">Средняя стоимость типовых работ</font></h4>
 </div>
+    <br>
     <form action="/" method="GET"  class="form-register">
         {% csrf_token %}
         {{ form.as_p }}&nbsp<button class="btn btn-outline-warning" type="submit">Найти</button>
 
     </form>
+    <br>
 <table class="table table-bordered">
 <tr>
 

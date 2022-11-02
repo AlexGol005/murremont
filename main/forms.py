@@ -7,7 +7,7 @@ from .models import *
 class OrderForm(forms.ModelForm):
     """форма для заказа"""
 
-    name = forms.CharField(label='Ваше имя', max_length=100, required=True,
+    person = forms.CharField(label='Ваше имя', max_length=100, required=True,
                            widget=forms.TextInput(attrs={'class': 'form-control',
                                                          'placeholder': 'Имя'}
                                                   ))
@@ -35,7 +35,9 @@ class OrderForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
     "форма для поиска по списку работ"
-    name = forms.CharField(label='Найти')
+    name = forms.CharField(label='Найти', widget=forms.TextInput(attrs={'class': 'form-control',
+                                                              'placeholder': 'адрес'}
+                                                       ))
 
 
 
