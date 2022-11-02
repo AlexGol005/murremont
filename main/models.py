@@ -27,6 +27,7 @@ class Repair(models.Model):
             self.price = Decimal(5000)
         if self.term > Decimal(8):
             self.price = (self.term / Decimal(8)) * 5000
+        super(Repair, self).save(*args, **kwargs)
 
 
     def __str__(self):
