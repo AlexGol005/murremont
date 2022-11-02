@@ -1,10 +1,16 @@
 from decimal import Decimal
-
 from django.db import models
 
+STATUS = (
+        ('Новый', 'Новый'),
+        ('Обсуждаем', 'Обсуждаем'),
+        ('Ждет выезда', 'Ждет выезда'),
+        ('Выполнен', 'Выполнен'),
+        ('Отказ до', 'Отказ до'),
+        ('Отказ после', 'Отказ после'),
+    )
 class Type(models.Model):
     name = models.CharField('Тип работ', max_length=100, unique=True)
-
 
     def __str__(self):
         return self.name
@@ -44,10 +50,13 @@ class Order(models.Model):
     comment = models.CharField('комментарий', max_length=1000, blank=True, null=True)
     telephone = models.CharField('телефон', max_length=12, blank=True, null=True)
     email = models.CharField('email', max_length=100, blank=True, null=True)
+    status = models.CharField(max_length=300, choices=STATUS, default='Новый', null=True,
+                              verbose_name='Статус')
+    commentmanager = models.CharField('комментарий менеджера', max_length=1000, blank=True, null=True)
 
 
     def __str__(self):
-        return f'{self.person} ,  {self.telephone}, {self.repair}, {self.adress}'
+        return f'{self.person} ,  {self.telephone}, {self.repair}, {self.adress}, ст: {self.status}'
 
     class Meta:
         verbose_name = 'Заказ'
