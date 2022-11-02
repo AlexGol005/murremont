@@ -15,11 +15,15 @@ class OrderForm(forms.ModelForm):
                            widget=forms.TextInput(attrs={'class': 'form-control',
                                                          'placeholder': '89500484071'}
                                                   ))
+    email = forms.CharField(label='email (не обязательное поле)', max_length=12, required=False,
+                                widget=forms.TextInput(attrs={'class': 'form-control',
+                                                              'placeholder': '89500484071'}
+                                                       ))
     adress = forms.CharField(label='Адрес работ', max_length=1000, required=False,
                                 widget=forms.TextInput(attrs={'class': 'form-control',
                                                               'placeholder': 'адрес'}
                                                        ))
-    comment = forms.CharField(label='Описание, комментарии (не обязательно)', max_length=10000, required=False,
+    comment = forms.CharField(label='Описание, комментарии (не обязательное поле)', max_length=10000, required=False,
                              widget=forms.Textarea(attrs={'class': 'form-control'}))
 
 
@@ -29,6 +33,7 @@ class OrderForm(forms.ModelForm):
                   'telephone',
                   'adress',
                   'comment',
+                  'email',
                   ]
 
 
