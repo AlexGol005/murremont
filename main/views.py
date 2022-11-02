@@ -6,9 +6,10 @@ from main.models import Repair
 
 class MainView(ListView):
     """выводит главную страницу"""
-    template_name = 'main/main.html'
     model = Repair
+    template_name = 'main/main.html'
     context_object_name = 'objects'
+    paginate_by = 20
 
 class OrderView(TemplateView):
     """выводит страницу заказа"""
