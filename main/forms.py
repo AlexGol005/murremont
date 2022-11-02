@@ -15,7 +15,7 @@ class OrderForm(forms.ModelForm):
                            widget=forms.TextInput(attrs={'class': 'form-control',
                                                          'placeholder': '89500484071'}
                                                   ))
-    email = forms.CharField(label='email (не обязательное поле)', max_length=12, required=False,
+    email = forms.CharField(label='email (не обязательное поле)', max_length=100, required=False,
                                 widget=forms.TextInput(attrs={'class': 'form-control',
                                                               'placeholder': '89500484071'}
                                                        ))

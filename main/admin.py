@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(Type)
 admin.site.register(Repair)
+admin.site.register(Order)

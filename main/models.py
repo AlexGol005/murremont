@@ -43,7 +43,7 @@ class Order(models.Model):
     repair = models.CharField('работы по прайсу', max_length=1000, blank=True, null=True)
     comment = models.CharField('комментарий', max_length=1000, blank=True, null=True)
     telephone = models.CharField('телефон', max_length=12, blank=True, null=True)
-    email = models.CharField('email', max_length=12, blank=True, null=True)
+    email = models.CharField('email', max_length=100, blank=True, null=True)
 
 
     def __str__(self):

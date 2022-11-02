@@ -1,4 +1,5 @@
 from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import redirect
 from django.views.generic import TemplateView, ListView, CreateView
 
 from main.forms import SearchForm, OrderForm
@@ -46,7 +47,11 @@ class OrderView(SuccessMessageMixin, CreateView):
         order = form.save(commit=False)
         order.repair = Repair.objects.get(pk=self.kwargs['pk']).name
         order.save()
-        return super().form_valid(form)
+        return redirect('/sucsesss')
+
+class SucsessView(TemplateView):
+    """ Представление, которое выводит подтверждение отправки заявки покупателю"""
+    template_name = 'main/sucsess.html'
 
 
 
